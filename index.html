@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cristian Acuña — Offensive Cybersecurity Team Lead</title>
+<meta name="description" content="Cristian Acuña — Offensive Cybersecurity Team Lead, Ph.D.(c) en Ciberseguridad. Perfil profesional en respuesta a incidentes, threat hunting y seguridad ofensiva.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230F1419'/%3E%3Ctext x='50' y='68' font-size='60' text-anchor='middle' fill='%23C9A227' font-family='Georgia,serif'%3ECA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,600;8..60,700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg: #0F1419;
+    --panel: #161C25;
+    --line: #262E3A;
+    --ink: #E8EAED;
+    --ink-dim: #8B95A1;
+    --gold: #C9A227;
+    --gold-dim: #7A6420;
+    --sage: #6E9277;
+    --content-width: 760px;
+    --side-pad: clamp(24px, 6vw, 96px);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--gold); color:#0F1419; }
+  a{ color:inherit; }
+  img{max-width:100%;}
+
+  .wrap{ max-width:1180px; margin:0 auto; padding:0 var(--side-pad); }
+
+  /* ---------- layout: sidebar nav + content ---------- */
+  .layout{ display:grid; grid-template-columns:220px 1fr; gap:64px; }
+  @media (max-width:900px){ .layout{ grid-template-columns:1fr; } }
+
+  nav.side{
+    position:sticky; top:56px; align-self:start;
+    display:flex; flex-direction:column; gap:14px;
+    padding-top:8px;
+  }
+  @media (max-width:900px){
+    nav.side{ position:static; flex-direction:row; flex-wrap:wrap; gap:8px 18px; padding:18px 0 8px; border-bottom:1px solid var(--line); margin-bottom:8px; }
+  }
+  nav.side a{
+    text-decoration:none; color:var(--ink-dim);
+    font-size:14px; letter-spacing:.01em;
+    padding:2px 0; border-left:2px solid transparent;
+    padding-left:14px;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  @media (max-width:900px){ nav.side a{ border-left:none; padding-left:0; border-bottom:2px solid transparent; padding-bottom:4px;} }
+  nav.side a:hover, nav.side a:focus-visible{ color:var(--ink); border-color:var(--gold); }
+
+  main{ min-width:0; }
+
+  section{ padding:64px 0; border-bottom:1px solid var(--line); }
+  section:last-of-type{ border-bottom:none; }
+
+  h1,h2,h3{ font-family:'Source Serif 4', serif; font-weight:600; margin:0; }
+  h2.section-title{ font-size:1.6rem; margin-bottom:28px; color:var(--ink); }
+
+  p{ max-width:var(--content-width); color:var(--ink); }
+  p.dim{ color:var(--ink-dim); }
+
+  .mono{ font-family:'IBM Plex Mono', monospace; }
+
+  /* ---------- hero ---------- */
+  .hero{ padding:88px 0 56px; border-bottom:1px solid var(--line); }
+  .hero .eyebrow{ font-family:'IBM Plex Mono', monospace; font-size:13px; color:var(--gold); margin-bottom:18px; }
+  .hero h1{ font-size:clamp(2.4rem, 5vw, 3.4rem); line-height:1.08; letter-spacing:-0.01em; max-width:14ch; }
+  .hero .role{ font-size:1.15rem; color:var(--ink-dim); margin-top:16px; max-width:44ch; }
+  .hero .summary{ margin-top:28px; color:var(--ink); max-width:60ch; }
+
+  .stat-row{ display:flex; gap:48px; margin-top:44px; flex-wrap:wrap; }
+  .stat .num{ font-family:'Source Serif 4', serif; font-size:2.1rem; color:var(--gold); line-height:1; }
+  .stat .label{ font-size:13px; color:var(--ink-dim); margin-top:6px; max-width:16ch; }
+
+  .cta{
+    display:inline-block; margin-top:40px;
+    background:var(--gold); color:#191305;
+    font-weight:600; text-decoration:none;
+    padding:13px 26px; border-radius:2px;
+    font-size:15px; letter-spacing:.01em;
+    transition:background .15s ease, transform .15s ease;
+  }
+  .cta:hover{ background:#E0B62F; transform:translateY(-1px); }
+
+  /* ---------- timeline (experience + education: genuinely chronological) ---------- */
+  .timeline{ position:relative; padding-left:28px; border-left:1px solid var(--line); max-width:var(--content-width); }
+  .t-item{ position:relative; padding-bottom:36px; }
+  .t-item:last-child{ padding-bottom:0; }
+  .t-item::before{
+    content:''; position:absolute; left:-33px; top:5px;
+    width:9px; height:9px; border-radius:50%;
+    background:var(--bg); border:2px solid var(--ink-dim);
+  }
+  .t-item.current::before{ border-color:var(--gold); background:var(--gold); }
+  .t-item .date{ font-family:'IBM Plex Mono', monospace; font-size:12.5px; color:var(--gold); }
+  .t-item.current .date{ color:var(--gold); }
+  .t-item .role{ font-size:1.05rem; font-weight:600; margin-top:6px; }
+  .t-item .org{ color:var(--ink-dim); font-size:14.5px; margin-top:2px; }
+
+  /* ---------- certification categories ---------- */
+  .cat-block{ margin-bottom:34px; max-width:var(--content-width); }
+  .cat-block:last-child{ margin-bottom:0; }
+  .cat-block h3{ font-size:1.02rem; font-weight:600; margin-bottom:14px; color:var(--ink); font-family:'IBM Plex Sans',sans-serif; }
+  .tags{ display:flex; flex-wrap:wrap; gap:8px; }
+  .tag{
+    font-family:'IBM Plex Mono', monospace; font-size:12.5px;
+    color:var(--ink-dim); background:var(--panel);
+    border:1px solid var(--line); border-radius:3px;
+    padding:6px 10px; white-space:nowrap;
+  }
+  .cert-note{ margin-top:18px; font-size:13.5px; }
+
+  /* ---------- skills ---------- */
+  .skill-tags{ display:flex; flex-wrap:wrap; gap:10px; max-width:var(--content-width); }
+  .skill-tags .tag{ font-family:'IBM Plex Sans',sans-serif; font-size:14px; color:var(--ink); padding:8px 14px; }
+
+  /* ---------- languages ---------- */
+  .lang-row{ display:flex; align-items:center; gap:20px; max-width:var(--content-width); margin-bottom:16px; }
+  .lang-row:last-child{ margin-bottom:0; }
+  .lang-name{ width:110px; font-weight:500; flex-shrink:0; }
+  .lang-bar{ flex:1; height:6px; background:var(--panel); border:1px solid var(--line); border-radius:3px; overflow:hidden; }
+  .lang-bar span{ display:block; height:100%; background:var(--gold); }
+  .lang-level{ width:110px; text-align:right; color:var(--ink-dim); font-size:13px; flex-shrink:0; }
+
+  /* ---------- contact ---------- */
+  .contact-box{ max-width:var(--content-width); }
+  .contact-box p{ margin-bottom:8px; }
+
+  footer{ padding:36px var(--side-pad) 56px; text-align:center; color:var(--ink-dim); font-size:13px; }
+  footer a{ color:var(--ink-dim); text-decoration:underline; }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior:auto; }
+    .cta:hover{ transform:none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap layout">
+
+  <nav class="side" aria-label="Navegación de secciones">
+    <a href="#perfil">Perfil</a>
+    <a href="#experiencia">Experiencia</a>
+    <a href="#formacion">Formación</a>
+    <a href="#certificaciones">Certificaciones</a>
+    <a href="#habilidades">Habilidades</a>
+    <a href="#contacto">Contacto</a>
+  </nav>
+
+  <main>
+
+    <header class="hero" id="perfil">
+      <div class="eyebrow mono">Ciberseguridad ofensiva &amp; respuesta a incidentes</div>
+      <h1>Cristian Acuña</h1>
+      <p class="role">Offensive Cybersecurity Team Lead · Ph.D.(c) en Ciberseguridad · Threat Hunter &amp; DFIR</p>
+      <p class="summary">Lidero equipos de seguridad ofensiva y respuesta a incidentes en organizaciones de retail y servicios financieros en Chile y Perú. Mi trabajo cubre todo el ciclo: desde la caza de amenazas y el análisis forense digital hasta la gestión de crisis y la operación de un Centro de Operaciones de Seguridad. Actualmente curso un doctorado en Ciberseguridad, tras un máster enfocado en ciberterrorismo y ciberguerra.</p>
+
+      <div class="stat-row">
+        <div class="stat"><div class="num mono">6+</div><div class="label">años en seguridad defensiva y ofensiva</div></div>
+        <div class="stat"><div class="num mono">35+</div><div class="label">certificaciones internacionales</div></div>
+        <div class="stat"><div class="num mono">3</div><div class="label">países de operación: Chile, Perú, Venezuela</div></div>
+      </div>
+
+      <a class="cta" href="mailto:Cristianj.acunar@gmail.com?subject=Oportunidad%20laboral%20-%20Ciberseguridad">Enviar un mensaje</a>
+    </header>
+
+    <section id="experiencia">
+      <h2 class="section-title">Experiencia profesional</h2>
+      <div class="timeline">
+
+        <div class="t-item current">
+          <div class="date mono">Ago. 2023 — Actual</div>
+          <div class="role">Offensive Cybersecurity Team Lead</div>
+          <div class="org">Ripley Customer · Chile – Perú</div>
+        </div>
+
+        <div class="t-item">
+          <div class="date mono">Sept. 2022 — Ago. 2023</div>
+          <div class="role">Head of Security Operations Center</div>
+          <div class="org">Falabella S.A. · Chile</div>
+        </div>
+
+        <div class="t-item">
+          <div class="date mono">Abr. 2021 — Sept. 2022</div>
+          <div class="role">Incident &amp; Emergency Lead</div>
+          <div class="org">Falabella S.A. · Chile</div>
+        </div>
+
+        <div class="t-item">
+          <div class="date mono">Dic. 2020 — Abr. 2021</div>
+          <div class="role">DFIR CSIRT / Threat Hunter</div>
+          <div class="org">Falabella S.A. · Chile</div>
+        </div>
+
+        <div class="t-item">
+          <div class="date mono">Abr. 2020 — Nov. 2020</div>
+          <div class="role">Analyst, Incident Response Team</div>
+          <div class="org">Atcom Outsourcing · Chile</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="formacion">
+      <h2 class="section-title">Formación académica</h2>
+      <div class="timeline">
+
+        <div class="t-item">
+          <div class="date mono">2024</div>
+          <div class="role">Ph.D. in Cybersecurity</div>
+          <div class="org">Cambridge International University · España</div>
+        </div>
+
+        <div class="t-item">
+          <div class="date mono">2019 — 2021</div>
+          <div class="role">Máster en Ciberseguridad, Ciberterrorismo y Ciberguerra</div>
+          <div class="org">Universidad Telemática Pegaso · Italia</div>
+        </div>
+
+        <div class="t-item">
+          <div class="date mono">2010 — 2015</div>
+          <div class="role">Ingeniería en Computación</div>
+          <div class="org">Colegio Universitario de Caracas · Venezuela</div>
+        </div>
+
+      </div>
+    </section>
+
+    <section id="certificaciones">
+      <h2 class="section-title">Certificaciones</h2>
+      <p class="dim" style="margin-bottom:32px; font-size:14.5px;">Más de 35 certificaciones internacionales cursadas entre 2019 y 2024, agrupadas aquí por área de especialización.</p>
+
+      <div class="cat-block">
+        <h3>Inteligencia y caza de amenazas</h3>
+        <div class="tags">
+          <span class="tag">Cyber Intelligence Analyst — IBM X-Force</span>
+          <span class="tag">Recorded Future Intelligence Fundamentals</span>
+          <span class="tag">Foundations of Threat Hunting — Purple Academy</span>
+          <span class="tag">MITRE ATT&amp;CK Operationalization — ATTCKIQ</span>
+          <span class="tag">EASY Framework for Threat Intelligence — ATTCKIQ</span>
+          <span class="tag">Advanced Cyber Threat Intelligence — Cybrary</span>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <h3>Forense digital y respuesta a incidentes (DFIR)</h3>
+        <div class="tags">
+          <span class="tag">Digital Forensic Essential — EC-Council</span>
+          <span class="tag">DFIR Summit Solutions Track — SANS Institute</span>
+          <span class="tag">Intro to DFIR: Divide &amp; Conquer — Basis Technology</span>
+          <span class="tag">Autopsy 8-Hour Training — Basis Technology</span>
+          <span class="tag">Informática Forense y Ciberderecho — Miriadax</span>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <h3>Ciberguerra y hacking ético</h3>
+        <div class="tags">
+          <span class="tag">Cyber Warfare and Terrorism — Charles Sturt University</span>
+          <span class="tag">Iniciación al hacking ético — COMUNIX</span>
+          <span class="tag">Análisis de malware en Windows — Miriadax</span>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <h3>Seguridad de red, cloud y endpoint</h3>
+        <div class="tags">
+          <span class="tag">Fortinet NSE1 · NSE2 · NSE3</span>
+          <span class="tag">Cortex XDR — Palo Alto Networks</span>
+          <span class="tag">Autofocus &amp; Prisma Cloud — Palo Alto Networks</span>
+          <span class="tag">Cloudflare ASE</span>
+          <span class="tag">Aviatrix Certified Engineer</span>
+          <span class="tag">Cisco AMP for Endpoints</span>
+          <span class="tag">Cisco Cybersecurity Operations Fundamentals</span>
+          <span class="tag">FireEye CM / EX / NX Deployment</span>
+        </div>
+      </div>
+
+      <div class="cat-block">
+        <h3>Gobernanza y gestión de la seguridad</h3>
+        <div class="tags">
+          <span class="tag">CISM — Cybrary</span>
+          <span class="tag">CCSP (ISC²) — Cybrary</span>
+          <span class="tag">Cybersecurity Threats — CISA</span>
+          <span class="tag">Certified Network Security Specialist</span>
+          <span class="tag">Launching your SOC Analyst Career</span>
+          <span class="tag">Master in Cyber Security bundle — EH Academy</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section id="habilidades">
+      <h2 class="section-title">Áreas de conocimiento</h2>
+      <div class="skill-tags">
+        <span class="tag">Ciberseguridad ofensiva</span>
+        <span class="tag">DFIR</span>
+        <span class="tag">Threat Hunting</span>
+        <span class="tag">Análisis de malware</span>
+        <span class="tag">Ciberguerra</span>
+        <span class="tag">Ciberterrorismo</span>
+        <span class="tag">Gestión de crisis</span>
+        <span class="tag">Hacking ético</span>
+      </div>
+
+      <div style="margin-top:48px;">
+        <h3 style="font-family:'Source Serif 4',serif; font-size:1.05rem; margin-bottom:20px;">Idiomas</h3>
+        <div class="lang-row">
+          <div class="lang-name">Español</div>
+          <div class="lang-bar"><span style="width:100%;"></span></div>
+          <div class="lang-level mono">Nativo</div>
+        </div>
+        <div class="lang-row">
+          <div class="lang-name">Inglés</div>
+          <div class="lang-bar"><span style="width:55%;"></span></div>
+          <div class="lang-level mono">Intermedio</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contacto">
+      <h2 class="section-title">Contacto</h2>
+      <div class="contact-box">
+        <p>Disponibilidad inmediata para nuevas oportunidades en ciberseguridad, banca y servicios financieros, y retail.</p>
+        <a class="cta" href="mailto:Cristianj.acunar@gmail.com?subject=Oportunidad%20laboral%20-%20Ciberseguridad">Enviar un mensaje</a>
+      </div>
+    </section>
+
+  </main>
+</div>
+
+<footer>
+  <p>Cristian Acuña — Actualizado 2026</p>
+</footer>
+
+</body>
+</html>
